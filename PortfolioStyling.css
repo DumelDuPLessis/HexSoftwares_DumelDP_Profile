@@ -1,0 +1,79 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+h1, h2 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+section {
+    padding: 2rem 5%;
+    margin: 20px 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#bio p, #skills ul, #experience ul, #contact p {
+    margin: 10px 0;
+}
+
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#skills li {
+    flex: 1 1 45%;
+    margin: 5px;
+}
+
+#experience h3 {
+    margin-bottom: 5px;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #skills ul {
+        flex-direction: column;
+    }
+
+    header, footer {
+        padding: 1rem;
+    }
+}
