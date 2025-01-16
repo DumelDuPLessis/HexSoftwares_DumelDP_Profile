@@ -7,35 +7,45 @@ document.addEventListener('DOMContentLoaded', loadTasks);
 
 // Add task function
 function addTask() {
-    const taskText = taskInput.value.trim();
+    const taskText = taskInput.value.trim(); // Get input and trim spaces
     if (taskText !== '') {
+        // Create a new list item (li)
         const li = document.createElement('li');
-        li.innerHTML = `
-            <span>${taskText}</span>
-            <button onclick="removeTask(this)">Remove</button>
-        `;
-        li.addEventListener('click', markCompleted);
+        li.classList.add('todo-item'); // Add the todo-item class for correct styling
+
+        // Create a span for the task text
+        const taskSpan = document.createElement('span');
+        taskSpan.textContent = taskText;
+
+        // Create a delete button
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', removeTask);
+
+        // Append the task text and delete button to the list item
+        li.appendChild(taskSpan);
+        li.appendChild(deleteButton);
+
+        // Append the list item to the task list (ul)
         taskList.appendChild(li);
-        saveTaskToLocalStorage(taskText);
+
+        // Clear the input field after adding
         taskInput.value = '';
     }
 }
 
-// Mark task as completed
-function markCompleted(e) {
-    if (e.target.tagName === 'LI') {
-        e.target.classList.toggle('completed');
-        updateTaskCompletion(e.target);
-    }
+// Remove task function
+function removeTask(event) {
+    const taskItem = event.target.parentElement; // Get the parent li
+    taskList.removeChild(taskItem); // Remove the li from the ul
 }
 
-// Remove task function
-function removeTask(button) {
-    const taskItem = button.parentElement;
-    const taskText = taskItem.querySelector('span').textContent;
-    taskItem.remove();
-    removeTaskFromLocalStorage(taskText);
-}
+// Mark task as completed by toggling the class
+taskList.addEventListener('click', function(event) {
+    if (event.target.tagName === 'SPAN') {
+        event.target.parentElement.classList.toggle('completed');
+    }
+});
 
 // Save tasks to local storage
 function saveTaskToLocalStorage(task) {

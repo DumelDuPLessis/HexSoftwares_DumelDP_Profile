@@ -8,12 +8,23 @@
 </head>
 <body>
 
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="Personal Portfolio.html">Portfolio</a></li>
+            <li><a href="ToDoList.html" class="active">To-Do List App</a></li>
+            <li><a href="ResumeWebsite.html">Resume</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <h1>To-Do List</h1>
         <input type="text" id="taskInput" placeholder="Add a new task">
         <button onclick="addTask()">Add Task</button>
 
-        <ul id="taskList"></ul>
+        <!-- Empty to-do list -->
+        <ul id="taskList">
+        </ul>
     </div>
 
     <script src="ToDolistScript.js"></script>
