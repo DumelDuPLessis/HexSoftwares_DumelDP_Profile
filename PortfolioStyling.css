@@ -77,3 +77,39 @@ footer {
         padding: 1rem;
     }
 }
+
+
+
+        /* Navigation Menu Styles */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+        nav ul li a.active {
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+    
